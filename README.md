@@ -1,7 +1,7 @@
-🚀 Hệ Thống Quản Lý Đánh Giá Sản Phẩm (Product Review & Management System)
+### Hệ Thống Quản Lý Đánh Giá Sản Phẩm (Product Review & Management System)
 Chào mừng bạn đến với dự án Product Review System. Đây là một giải pháp Backend toàn diện được xây dựng trên nền tảng Node.js, tập trung vào việc quản lý vòng đời sản phẩm, quy trình đặt hàng và hệ thống đánh giá đa chiều giữa người dùng và quản trị viên.
 
-📌 Tổng Quan Kiến Trúc
+### Tổng Quan Kiến Trúc
 Dự án tuân thủ kiến trúc Monolithic với mô hình phân lớp MVC (Model-View-Controller). Logic nghiệp vụ được đóng gói trong các Controllers, đảm bảo tính đóng gói và dễ dàng theo dõi luồng dữ liệu.
 
 Hệ thống sử dụng kiến trúc MERN Stack (MongoDB, Express, React, Node.js):
@@ -12,14 +12,14 @@ Frontend: Single Page Application (SPA) xây dựng bằng React, tối ưu giao
 
 Proxy: Sử dụng Vite Proxy để kết nối mượt mà giữa Frontend (Port 5173) và Backend (Port 4000).
 
-📂 Cấu Trúc Tổng Quan Dự Án
+### 📂 Cấu Trúc Tổng Quan Dự Án
 Hệ thống được chia làm hai phần chính:
 
 Backend (/BE_noSQL-main): API RESTful xử lý logic nghiệp vụ và cơ sở dữ liệu.
 
 Frontend (/product-reviews): Giao diện Single Page Application (SPA) hiện đại.
 
-🛠 Công Nghệ Sử Dụng ở Frontend
+### 🛠 Công Nghệ Sử Dụng ở Frontend
 Dự án tích hợp các công nghệ Frontend hiện đại:
 
 Vite: Công cụ build siêu nhanh cho dự án React.
@@ -30,10 +30,10 @@ Material UI (MUI): Framework UI cung cấp hệ thống giao diện chuẩn và 
 
 Context API (AuthContext): Quản lý trạng thái đăng nhập và thông tin người dùng toàn cục.
 
-📂 Hệ Thống Route & Tính Năng Frontend
+### 📂 Hệ Thống Route & Tính Năng Frontend
 
-1. Phân Hệ Người Dùng (User Portal)
-   Trang Chủ & Danh Sách: Hiển thị sản phẩm đa dạng (/, /products).
+### 1. Phân Hệ Người Dùng (User Portal)
+Trang Chủ & Danh Sách: Hiển thị sản phẩm đa dạng (/, /products).
 
 Chi Tiết Sản Phẩm: Hiển thị thông tin, hình ảnh và danh sách đánh giá từ người dùng (/product/:id).
 
@@ -41,8 +41,8 @@ Giỏ Hàng & Thanh Toán: Quy trình mua hàng khép kín từ chọn hàng đ�
 
 Xác Thực: Đăng ký và đăng nhập bảo mật (/login, /register).
 
-2. Phân Hệ Quản Trị (Admin Panel)
-   Tất cả các route admin đều được bảo vệ bởi lớp ProtectedRoute (chỉ admin mới có quyền truy cập):
+### 2. Phân Hệ Quản Trị (Admin Panel)
+Tất cả các route admin đều được bảo vệ bởi lớp ProtectedRoute (chỉ admin mới có quyền truy cập):
 
 Dashboard: Tổng quan hoạt động hệ thống (/admin).
 
@@ -52,7 +52,7 @@ Thông Báo: Quản lý các báo cáo vi phạm và hệ thống thông báo (/
 
 Quản Lý Kho: CRUD sản phẩm trực tiếp trên giao diện (/admin/products).
 
-🛠 Công Nghệ Sử Dụng Backend
+### 🛠 Công Nghệ Sử Dụng Backend
 Runtime: Node.js.
 
 Framework: Express.js.
@@ -63,7 +63,7 @@ Authentication: JSON Web Token (JWT) & Bcryptjs.
 
 File Handling: Multer (xử lý upload) & File System (fs).
 
-📂 Cấu Trúc Thư Mục Chức Năng Backend
+### 📂 Cấu Trúc Thư Mục Chức Năng Backend
 Hệ thống được chia thành các khối chức năng chính:
 
 1. Quản Lý Sản Phẩm & Danh Mục (productController.js, categoryController.js)
@@ -97,7 +97,7 @@ Admin có quyền: Ẩn review, cảnh cáo người dùng (warning count), ho�
 5. Quản Trị Hệ Thống (authController.js, backupController.js)
    Phân quyền: Phân biệt rõ rệt quyền hạn giữa User và Admin.
 
-⚙️ Hướng Dẫn Cài Đặt
+### ⚙️ Hướng Dẫn Cài Đặt
 Clone repository:
 
 Bash
@@ -113,13 +113,15 @@ Cài đặt thư viện: npm install
 Tạo file .env và cấu hình:
 
 PORT=4000
+
 MONGO_URI=mongodb://localhost:27017/ten_database_cua_ban
+
 JWT_SECRET=ma_bi_mat_cua_ban
 
 Chạy server: npm run dev
 
 2. Cấu hình Frontend
-   Di chuyển vào thư mục frontend: cd product-reviews
+Di chuyển vào thư mục frontend: cd product-reviews
 
 Cài đặt thư viện: npm install
 
@@ -133,7 +135,7 @@ npm run dev
 
 npm start
 
-🛠 Các Điểm Mạnh Về Kỹ Thuật (Technical Highlights)
+### 🛠 Các Điểm Mạnh Về Kỹ Thuật (Technical Highlights)
 Data Integrity: Sử dụng mongoose.aggregate để đảm bảo độ chính xác tuyệt đối khi thống kê báo cáo và tính toán rating.
 
 Resource Cleanup: Tự động xóa tập tin vật lý trên ổ đĩa khi sản phẩm hoặc đánh giá bị xóa hoàn toàn, tránh lãng phí tài nguyên server.
