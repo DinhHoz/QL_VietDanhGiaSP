@@ -146,7 +146,7 @@ Resource Cleanup: Tự động xóa tập tin vật lý trên ổ đĩa khi sả
 
 ### Chi tiết sản phẩm
 
-![Chi tiết sản phẩm](docs/images/2t.png)
+![Chi tiết sản phẩm](docs/images/2.png)
 
 ### Quản lý Admin
 
