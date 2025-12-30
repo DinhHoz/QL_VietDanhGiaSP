@@ -67,12 +67,14 @@ File Handling: Multer (xử lý upload) & File System (fs).
 Hệ thống được chia thành các khối chức năng chính:
 
 1. Quản Lý Sản Phẩm & Danh Mục (productController.js, categoryController.js)
-   Hỗ trợ CRUD sản phẩm với đầy đủ thông tin: tên, mô tả, giá, kho hàng (stock).
+
+Hỗ trợ CRUD sản phẩm với đầy đủ thông tin: tên, mô tả, giá, kho hàng (stock).
 
 Tính năng Soft Delete (Xóa mềm) và khôi phục sản phẩm.
 
 2. Hệ Thống Đánh Giá & Phản Hồi (reviewController.js, replyController.js, adminReplyController.js)
-   Điều kiện đánh giá: Chỉ người dùng đã mua sản phẩm và đơn hàng ở trạng thái completed mới có quyền để lại đánh giá.
+
+Điều kiện đánh giá: Chỉ người dùng đã mua sản phẩm và đơn hàng ở trạng thái completed mới có quyền để lại đánh giá.
 
 Đa phương tiện: Hỗ trợ upload nhiều ảnh cho mỗi review.
 
@@ -81,21 +83,24 @@ Tương tác: Cho phép Admin phản hồi review và User trả lời lẫn nha
 Tự động hóa: Tự động tính toán lại điểm trung bình (avgRating) và tổng số review của sản phẩm mỗi khi có thay đổi.
 
 3. Quy Trình Mua Hàng (cartController.js, orderController.js)
-   Giỏ hàng: Kiểm tra tồn kho thực tế (stock) ngay khi cập nhật số lượng trong giỏ hàng.
+
+Giỏ hàng: Kiểm tra tồn kho thực tế (stock) ngay khi cập nhật số lượng trong giỏ hàng.
 
 Đơn hàng: Quản lý trạng thái đơn hàng từ pending đến completed hoặc cancelled.
 
 Thanh toán: Hỗ trợ nhiều phương thức (COD, Online) và quản lý trạng thái thanh toán.
 
 4. Kiểm Soát Nội Dung & Báo Cáo (reportReviewController.js)
-   Cho phép người dùng báo cáo các đánh giá vi phạm.
+
+Cho phép người dùng báo cáo các đánh giá vi phạm.
 
 Admin có quyền: Ẩn review, cảnh cáo người dùng (warning count), hoặc bác bỏ báo cáo.
 
 Đảm bảo tính nhất quán dữ liệu: Khi ẩn review vi phạm, hệ thống tự động loại bỏ khỏi mảng cached reviews trong Product và tính toán lại điểm meta.
 
 5. Quản Trị Hệ Thống (authController.js, backupController.js)
-   Phân quyền: Phân biệt rõ rệt quyền hạn giữa User và Admin.
+
+Phân quyền: Phân biệt rõ rệt quyền hạn giữa User và Admin.
 
 ### ⚙️ Hướng Dẫn Cài Đặt
 Clone repository:
@@ -106,7 +111,8 @@ git clone <your-repo-url>
 cd <your-project-folder>
 
 1. Cấu hình Backend
-   Di chuyển vào thư mục backend: cd BE_noSQL-main
+
+Di chuyển vào thư mục backend: cd BE_noSQL-main
 
 Cài đặt thư viện: npm install
 
@@ -121,6 +127,7 @@ JWT_SECRET=ma_bi_mat_cua_ban
 Chạy server: npm run dev
 
 2. Cấu hình Frontend
+
 Di chuyển vào thư mục frontend: cd product-reviews
 
 Cài đặt thư viện: npm install
@@ -136,6 +143,7 @@ npm run dev
 npm start
 
 ### 🛠 Các Điểm Mạnh Về Kỹ Thuật (Technical Highlights)
+
 Data Integrity: Sử dụng mongoose.aggregate để đảm bảo độ chính xác tuyệt đối khi thống kê báo cáo và tính toán rating.
 
 Resource Cleanup: Tự động xóa tập tin vật lý trên ổ đĩa khi sản phẩm hoặc đánh giá bị xóa hoàn toàn, tránh lãng phí tài nguyên server.
