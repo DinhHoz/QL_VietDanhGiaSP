@@ -137,14 +137,21 @@ npm start
 Data Integrity: Sử dụng mongoose.aggregate để đảm bảo độ chính xác tuyệt đối khi thống kê báo cáo và tính toán rating.
 
 Resource Cleanup: Tự động xóa tập tin vật lý trên ổ đĩa khi sản phẩm hoặc đánh giá bị xóa hoàn toàn, tránh lãng phí tài nguyên server.
-![alt text](image.png)
-Màn hình trang chủ
 
-![alt text](image-1.png)
-Màn hình chi tiết sản phẩm
+## Giao diện hệ thống
 
-![alt text](image-2.png)
-Màn hình quản lí của admin
+### Trang chủ
 
-![alt text](image-3.png)
-Màn hình trang giỏ hàng
+![Trang chủ](docs/images/1.png)
+
+### Chi tiết sản phẩm
+
+![Chi tiết sản phẩm](docs/images/2t.png)
+
+### Quản lý Admin
+
+![Admin](docs/images/3.png)
+
+### Giỏ hàng
+
+![Giỏ hàng](docs/images/4.png)
