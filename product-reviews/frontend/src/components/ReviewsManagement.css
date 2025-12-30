@@ -1,0 +1,840 @@
+/* ReviewsManagement.css - Modern Shared Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ===== MAIN CONTAINER ===== */
+.reviews-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+.reviews-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.reviews-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  letter-spacing: -0.5px;
+}
+
+.reviews-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* ===== TABS ===== */
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tab-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.tab-btn:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-btn.active {
+  background: white;
+  color: #764ba2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== GRID LAYOUT (card mode) ===== */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 2rem;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== CARD STYLES ===== */
+.review-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* CARD HEADER FIX */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 75%;
+}
+
+.user-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.user-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.product-name {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+  word-wrap: break-word;
+  line-height: 1.3;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+/* ACTION ICONS */
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.delete-btn {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.delete-btn:hover {
+  background: #fecaca;
+}
+
+.reply-btn-icon {
+  background: #e0e7ff;
+  color: #4f46e5;
+}
+
+.reply-btn-icon:hover {
+  background: #c7d2fe;
+}
+
+/* RATING */
+.rating-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.stars {
+  color: #fbbf24;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
+
+.rating-text {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* REVIEW CONTENT */
+.review-content-box {
+  background: #f9fafb;
+  padding: 1.25rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  border-left: 3px solid #667eea;
+}
+
+.content-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.content-text {
+  color: #374151;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+/* EMPTY & LOADING */
+.empty-state-card,
+.loading-state-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: auto;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #eee;
+  border-top-color: #667eea;
+}
+
+/* =============================== */
+/*     TABLE MODE - ADMIN STYLE    */
+/* =============================== */
+
+.review-table-wrapper {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.review-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.review-table th {
+  background: #f3f4f6;
+  padding: 12px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.review-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* User cell */
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-cell .user-badge {
+  width: 36px;
+  height: 36px;
+  font-size: 0.9rem;
+}
+
+/* Comment column */
+.comment-cell {
+  max-width: 350px;
+  white-space: normal;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+/* Replies column */
+.reply-cell {
+  max-width: 380px;
+  white-space: normal;
+  word-wrap: break-word;
+  line-height: 1.5;
+}
+
+.reply-wrapper {
+  background: #eef2ff;
+  padding: 10px;
+  border-radius: 10px;
+  border-left: 3px solid #6366f1;
+  margin-bottom: 8px;
+}
+
+/* ACTION BUTTONS INSIDE TABLE */
+.action-cell {
+  display: flex;
+  gap: 10px;
+}
+
+.action-cell .icon-btn {
+  width: 34px;
+  height: 34px;
+}
+
+/* Hover row */
+.review-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* =============================== */
+/*        EDIT REPLY STYLING      */
+/* =============================== */
+
+.edit-reply-box {
+  background: #eef2ff;
+  padding: 12px;
+  border-radius: 12px;
+  border-left: 3px solid #667eea;
+  margin-top: 6px;
+}
+
+.edit-reply-textarea {
+  width: 100%;
+  min-height: 70px;
+  font-size: 0.9rem;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #c7d2fe;
+  resize: vertical;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.edit-reply-textarea:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* edit buttons */
+.edit-reply-actions {
+  margin-top: 8px;
+  display: flex;
+  gap: 10px;
+}
+
+.save-reply-btn {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.save-reply-btn:hover {
+  background: #4338ca;
+}
+
+.cancel-reply-btn {
+  background: #e5e7eb;
+  color: #374151;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.cancel-reply-btn:hover {
+  background: #d1d5db;
+}
+
+/* =============================== */
+/*        NEW REPLY FORM          */
+/* =============================== */
+
+.new-reply-section {
+  background: #f9fafb;
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 2px dashed #d1d5db;
+  transition: all 0.3s;
+}
+
+.new-reply-section:focus-within {
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.new-reply-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.new-reply-textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  resize: vertical;
+  transition: all 0.2s;
+  margin-bottom: 0.75rem;
+}
+
+.new-reply-textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.submit-reply-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.submit-reply-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =============================== */
+/* RESPONSIVE TABLE MODE          */
+/* =============================== */
+
+@media (max-width: 768px) {
+  .review-table-wrapper {
+    padding: 1rem;
+  }
+
+  .review-table {
+    font-size: 0.85rem;
+  }
+
+  .comment-cell,
+  .reply-cell {
+    max-width: 200px;
+  }
+}
+
+/* END OF ReviewsManagement.css */
+/* --- ReviewsManagement.css --- */
+
+.review-table-wrapper {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.review-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.review-table th,
+.review-table td {
+  padding: 16px;
+  vertical-align: middle;
+}
+
+.review-table th {
+  background-color: #f8fafc;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.review-table td {
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.review-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* User Cell */
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-badge {
+  width: 40px;
+  height: 40px;
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.user-name-text {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+/* Stars */
+.stars-container {
+  white-space: nowrap;
+}
+.stars { color: #f59e0b; }
+.stars-empty { color: #cbd5e1; }
+
+/* Comment */
+.comment-truncate {
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #475569;
+}
+
+/* Actions */
+.action-cell {
+  white-space: nowrap;
+}
+
+.icon-btn {
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-right: 8px;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reply-btn-icon {
+  background-color: #eff6ff;
+  color: #3b82f6;
+}
+.reply-btn-icon:hover { background-color: #dbeafe; color: #2563eb; }
+
+.delete-btn {
+  background-color: #fef2f2;
+  color: #ef4444;
+}
+.delete-btn:hover { background-color: #fee2e2; color: #dc2626; }
+
+
+/* =========================================
+   FIXED POPUP STYLES (Phần sửa lỗi chính)
+========================================= */
+
+/* 1. Lớp nền mờ phía sau */
+.popup-overlay {
+  position: fixed; /* Bắt buộc để phủ toàn màn hình */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Màu đen bán trong suốt */
+  backdrop-filter: blur(4px); /* Hiệu ứng mờ nền hiện đại */
+  z-index: 9998; /* Đảm bảo nằm trên mọi thứ khác */
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* 2. Hộp chứa popup chính */
+.popup-container {
+  position: fixed; /* Bắt buộc để căn giữa màn hình */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Kỹ thuật căn giữa kinh điển */
+  background: #ffffff;
+  width: 90%;
+  max-width: 550px; /* Độ rộng tối đa */
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  z-index: 9999; /* Phải cao hơn overlay */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Để bo tròn các góc con */
+  animation: slideInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideInUp {
+  from { opacity: 0; transform: translate(-50%, -40%) scale(0.96); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Header Popup */
+.popup-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fafafa;
+}
+
+.popup-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.popup-close {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+}
+.popup-close:hover {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+/* Nội dung Popup */
+.popup-content {
+  padding: 24px;
+  overflow-y: auto; /* Cho phép cuộn nếu nội dung quá dài */
+  max-height: 70vh;
+}
+
+/* Phần tóm tắt đánh giá cũ */
+.review-summary {
+  background-color: #f8fafc;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  border: 1px solid #e2e8f0;
+}
+
+.review-info-item {
+  display: flex;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+.review-label {
+  font-weight: 600;
+  color: #64748b;
+  width: 90px;
+  flex-shrink: 0;
+}
+.review-value {
+  color: #334155;
+  font-weight: 500;
+}
+
+.review-comment-quote {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed #cbd5e1;
+  font-style: italic;
+  color: #475569;
+  position: relative;
+  padding-left: 16px;
+}
+.review-comment-quote::before {
+  content: "“";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  font-size: 1.5rem;
+  color: #94a3b8;
+  line-height: 1;
+}
+
+/* Khu vực nhập liệu (Textbox) */
+.reply-input-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-label {
+  font-weight: 600;
+  color: #334155;
+  font-size: 0.95rem;
+}
+
+.popup-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 14px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  resize: vertical;
+  transition: all 0.2s ease;
+  outline: none;
+  background-color: #fff;
+  color: #1e293b;
+}
+
+.popup-textarea:focus {
+  border-color: #6366f1; /* Màu tím active */
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.popup-textarea::placeholder {
+  color: #a0aec0;
+}
+
+/* Footer Popup (Nút bấm) */
+.popup-footer {
+  padding: 20px 24px;
+  background-color: #fafafa;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+}
+
+.btn-cancel {
+  background-color: white;
+  border: 1px solid #d1d5db;
+  color: #4b5563;
+}
+.btn-cancel:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+  color: #1f2937;
+}
+
+.btn-submit {
+  background-color: #4f46e5; /* Màu chủ đạo */
+  color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.btn-submit:hover {
+  background-color: #4338ca;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.btn-submit:disabled {
+  background-color: #a5b4fc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Loading & Empty States */
+.loading-state, .empty-state {
+  padding: 40px;
+  text-align: center;
+  color: #64748b;
+  font-weight: 500;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}

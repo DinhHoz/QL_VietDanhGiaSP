@@ -1,0 +1,530 @@
+/* RepliedReviews.css - Modern Card-Based Design */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.replied-reviews-wrapper {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    padding: 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.replied-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.replied-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: -0.5px;
+}
+
+.replied-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Loading & Empty States */
+.replied-loading,
+.replied-empty {
+    background: white;
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.replied-loading p,
+.replied-empty p {
+    font-size: 1.1rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f4f6;
+    border-top-color: #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Reviews Grid */
+.replied-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 2rem;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Review Card */
+.replied-review-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.replied-review-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+.replied-review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Header */
+.replied-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.replied-user-info {
+    flex: 1;
+}
+
+.replied-user-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.replied-user-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.replied-product-name {
+    font-size: 0.9rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.replied-delete-btn {
+    background: #fee2e2;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    color: #ef4444;
+}
+
+.replied-delete-btn:hover {
+    background: #fecaca;
+    transform: scale(1.1);
+}
+
+/* Rating */
+.replied-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.replied-stars {
+    color: #fbbf24;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+}
+
+.replied-rating-text {
+    font-size: 0.9rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* Review Content */
+.replied-review-content {
+    background: #f9fafb;
+    padding: 1.25rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    border-left: 3px solid #667eea;
+}
+
+.replied-review-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #667eea;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.replied-review-text {
+    color: #374151;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+/* Replies Section */
+.replied-replies-section {
+    margin-bottom: 1.5rem;
+}
+
+.replied-replies-header {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #667eea;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.replied-replies-count {
+    background: #667eea;
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 12px;
+}
+
+.replied-replies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.replied-reply-item {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8eeff 100%);
+    padding: 1rem;
+    border-radius: 12px;
+    border-left: 3px solid #667eea;
+    transition: all 0.2s;
+}
+
+.replied-reply-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.replied-admin-name {
+    font-weight: 600;
+    color: #667eea;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.replied-admin-badge {
+    background: #667eea;
+    color: white;
+    font-size: 0.65rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.replied-reply-text {
+    color: #4b5563;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+/* New Reply Form */
+.replied-new-reply-section {
+    background: #f9fafb;
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 2px dashed #d1d5db;
+    transition: all 0.3s;
+}
+
+.replied-new-reply-section:focus-within {
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.replied-new-reply-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.replied-new-reply-textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    resize: vertical;
+    transition: all 0.2s;
+    margin-bottom: 0.75rem;
+}
+
+.replied-new-reply-textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.replied-new-reply-textarea::placeholder {
+    color: #9ca3af;
+}
+
+.replied-submit-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    width: 100%;
+}
+
+.replied-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.replied-submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .replied-reviews-wrapper {
+        padding: 1rem;
+    }
+
+    .replied-title {
+        font-size: 2rem;
+    }
+
+    .replied-reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .replied-review-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Smooth Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* ============================= */
+/*        TABLE VIEW UI          */
+/* ============================= */
+
+.review-table-wrapper {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem;
+}
+
+.review-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.review-table th {
+    background: #f3f4f6;
+    padding: 12px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.review-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: top;
+}
+
+/* USER CELL */
+.user-cell {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.user-badge {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* COMMENT */
+.comment-cell {
+    max-width: 280px;
+    white-space: normal;
+    line-height: 1.4;
+}
+
+/* ADMIN REPLIES */
+.reply-list-cell {
+    max-width: 320px;
+    white-space: normal;
+}
+
+.reply-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.reply-list li {
+    background: #eef2ff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+/* NEW REPLY INPUT */
+.reply-input {
+    width: 100%;
+    min-height: 60px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 8px;
+    resize: vertical;
+    margin-bottom: 8px;
+}
+
+/* BUTTONS */
+.table-btn {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.reply-btn {
+    background: #e0e7ff;
+    color: #4f46e5;
+}
+
+.reply-btn:hover {
+    background: #c7d2fe;
+}
+
+.delete-btn {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.delete-btn:hover {
+    background: #fecaca;
+}
+
+.review-table tbody tr:hover {
+    background: #fafafa;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+
+    .comment-cell,
+    .reply-list-cell {
+        max-width: 180px;
+    }
+
+    .review-table {
+        font-size: 0.85rem;
+    }
+}
