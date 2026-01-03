@@ -104,18 +104,18 @@ Phân quyền: Phân biệt rõ rệt quyền hạn giữa User và Admin.
 
 ### ⚙️ Hướng Dẫn Cài Đặt
 Clone repository:
-
+```
 Bash
 
 git clone <your-repo-url>
 cd <your-project-folder>
-
+```
 1. Cấu hình Backend
 
 Di chuyển vào thư mục backend: cd BE_noSQL-main
 
 Cài đặt thư viện: npm install
-
+```
 Tạo file .env và cấu hình:
 
 PORT=4000
@@ -123,7 +123,7 @@ PORT=4000
 MONGO_URI=mongodb://localhost:27017/ten_database_cua_ban
 
 JWT_SECRET=ma_bi_mat_cua_ban
-
+```
 Chạy server: npm run dev
 
 2. Cấu hình Frontend
